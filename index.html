@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anjali | ML + GNNs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Space Mono', monospace;
+      background-color: #fff;
+      color: #111;
+      margin: 0;
+      padding: 2rem;
+      background-image: radial-gradient(#ddd 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .layout {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 2rem;
+    }
+
+    .sidebar {
+      flex: 1 1 280px;
+      max-width: 300px;
+    }
+
+    .sidebar img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar h1 {
+      font-size: 1.8rem;
+      margin: 0.5rem 0;
+    }
+
+    .sidebar p {
+      margin: 0.5rem 0;
+    }
+
+    .nav {
+      margin-top: 1rem;
+    }
+
+    .nav a {
+      display: inline-block;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      padding: 0.3rem 0.6rem;
+      color: #111;
+      background: #fffbe6;
+      text-decoration: none;
+      border: 1px dashed #FFD700;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    .nav a:hover {
+      background-color: #FFEB3B;
+      color: #000;
+    }
+
+    .main {
+      flex: 1 1 600px;
+      max-width: 800px;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin-top: 0;
+      border-left: 4px solid #FFD700;
+      padding-left: 0.5rem;
+      text-transform: lowercase;
+    }
+
+    p, ul {
+      line-height: 1.6;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: #fffbe6;
+      border-radius: 6px;
+      box-shadow: 2px 2px 0px #FFD700;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .layout {
+        flex-direction: column;
+      }
+
+      .sidebar, .main {
+        max-width: 100%;
+      }
+
+      .nav a {
+        display: inline-block;
+        margin-right: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <div class="sidebar">
+      <img src="./photo_anjali.jpeg" alt="Anjali's photo">
+      <h1>Anjali ✨</h1>
+      <p><strong>ML Researcher</strong> • Graph Neural Networks • Circuit Reverse Engineering</p>
+      <p>Hi, I'm Anjali — I build GNNs to reverse-engineer hardware, and sometimes ship weird side projects when I should be sleeping.</p>
+      <div class="nav">
+        <a href="/cv.pdf">CV</a>
+        <a href="https://github.com/YOUR_USERNAME">GitHub</a>
+        <a href="/blog">Blog</a>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="section">
+        <h2>research interests</h2>
+        <p>I'm interested in machine learning for systems — especially using graph neural networks to understand, interpret, and reverse engineer digital circuits. I'm also excited about model transparency, robustness, and tools for debugging ML pipelines. Currently looking for PhD opportunities in these areas.</p>
+      </div>
+
+      <div class="section">
+        <h2>thesis</h2>
+        <p>Currently working on reverse engineering hardware netlists using Graph Neural Networks — with a focus on subcircuit detection and node-level prediction in large circuit graphs.</p>
+      </div>
+
+      <div class="section">
+        <h2>publications</h2>
+        <ul>
+          <li>Paper 1 – [Title] – [Conference/Journal]</li>
+          <li>Paper 2 – [Title] – [Conference/Journal]</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>projects</h2>
+        <p>👓 <strong>Nepali OCR</strong> – A Streamlit-based OCR tool for Nepali text. Currently improving it into a full web app.</p>
+      </div>
+
+      <div class="section">
+        <h2>blog</h2>
+        <p>My models fail so yours don’t. Read about my most chaotic training disasters <a href="/blog">here</a>.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
