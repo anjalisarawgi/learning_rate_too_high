@@ -11,23 +11,27 @@
       background-color: #fff9e6;
       margin: 0;
       padding: 2rem;
-      background-image: radial-gradient(#eee 2px, transparent 1px);
+      background-image: radial-gradient(#ebe9e9
+      2px, transparent 1px);
       background-size: 20px 20px;
     }
 
     header {
-      background: #000;
-      color: #FFD700;
-      padding: 1rem 2rem;
-      font-size: 1.8rem;
-      font-weight: bold;
-      border-radius: 1rem;
-      box-shadow: 4px 4px 0 #FFD700;
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
+  background: #FFC107;                    /* strong warm yellow */
+  color: #1C1C1C;                         /* rich black text */
+  padding: 1rem 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  border: 2px dashed #000;               /* sticker style */
+  border-radius: 1rem;
+  box-shadow: 6px 6px 0 #000;            /* bold drop shadow like a cut-out */
+  max-width: 680px;
+  margin: 1.5rem auto;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
     nav {
       display: flex;
       justify-content: center;
@@ -47,6 +51,19 @@
     nav a:hover {
       background: #d1f7ff;
       border-radius: 0.5rem;
+    }
+
+    .cursor {
+    display: inline-block;
+    margin-left: 0.3rem;
+    animation: blink 1s steps(2, start) infinite;
+    font-weight: 400;
+    }
+
+    @keyframes blink {
+    to {
+        visibility: hidden;
+    }
     }
 
     .card {
@@ -91,29 +108,33 @@
       <!-- Left Section: Intro -->
       <aside style="width: 250px; padding: 2rem; font-family: 'Space Mono', monospace;">
         <h2 style="margin-top: 0;">Hi!</h2>
+        <!-- <h3 style="margin-top: 0;">Thankyou for visiting </h3> -->
+        <h3 style="margin-top: 0; color: #5a5a5a;">Thankyou for visiting</h3>
         <p>My name is <strong>Anjali</strong> and I talk about my very unintelligent mistakes as a ML learner. I hope this helps you not make the same mistakes, or atleast have a good laugh :D </p>
         <!-- Email -->
-  <a href="mailto:anjali@example.com" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M2 4h20v16H2V4zm2 2v.511l8 5.334 8-5.334V6H4zm0 2.489V18h16V8.489l-8 5.333-8-5.333z"/>
-    </svg>
-    <span>Email</span>
-  </a>
+        <a href="mailto:anjali@example.com" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M2 4h20v16H2V4zm2 2v.511l8 5.334 8-5.334V6H4zm0 2.489V18h16V8.489l-8 5.333-8-5.333z"/>
+            </svg>
+            <span>Email</span>
+        </a>
 
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/in/anjali" target="_blank" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.49h4V24h-4V8.49zm7.5 0h3.84v2.11h.05c.54-1.01 1.84-2.07 3.79-2.07 4.05 0 4.8 2.66 4.8 6.12V24h-4v-7.79c0-1.86-.03-4.26-2.59-4.26-2.59 0-2.99 2.02-2.99 4.11V24h-4V8.49z"/>
-    </svg>
-    <span>LinkedIn</span>
-  </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/anjali" target="_blank" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.49h4V24h-4V8.49zm7.5 0h3.84v2.11h.05c.54-1.01 1.84-2.07 3.79-2.07 4.05 0 4.8 2.66 4.8 6.12V24h-4v-7.79c0-1.86-.03-4.26-2.59-4.26-2.59 0-2.99 2.02-2.99 4.11V24h-4V8.49z"/>
+            </svg>
+            <span>LinkedIn</span>
+        </a>
 
 
       </aside>
   
       <!-- Right Section: Main Content -->
       <main style="flex: 1;">
-        <header>learning rate too high</header>
+        <header>
+            learning rate too high<span class="cursor">_</span>
+          </header>
   
         <nav>
           <a href="#wrong-script">wrong script</a>
