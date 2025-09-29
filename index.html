@@ -4,15 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>learning rate too high</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Press+Start+2P&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Press+Start+2P&family=Inter&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Space Mono', monospace;
-      background-color: #fff9e6;
+      background-color: #fdfaf4;
       margin: 0;
       padding: 2rem;
-      background-image: radial-gradient(#ebe9e9 2px, transparent 1px);
-      background-size: 20px 20px;
+      /* background-image: radial-gradient(#ebe9e9 2px, transparent 1px); */
+      background-image: radial-gradient(#ebe9e9 2px, transparent 2px);
+      background-size: 22px 22px;
     }
 
     header {
@@ -25,11 +27,12 @@
       border: 2px dashed #000;
       border-radius: 1rem;
       box-shadow: 6px 6px 0 #000;
-      max-width: 680px;
+      max-width: 900px;
       margin: 1.5rem auto;
       text-align: center;
       letter-spacing: 0.5px;
       transition: all 0.2s ease;
+      
     }
 
     .cursor {
@@ -54,19 +57,26 @@
     }
 
     nav a {
-      text-decoration: none;
-      color: #000;
-      font-weight: bold;
-      border-bottom: 2px dashed #000;
-      padding: 0.25rem 0.5rem;
-      transition: all 0.2s ease;
-    }
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  border-bottom: 2px dashed #000;
+  padding: 0.25rem 0.5rem;
+  transition: all 0.2s ease;
+}
 
-    nav a:hover {
-      background: #C1F4C5;
-      border-radius: 0.5rem;
-      transform: scale(1.05);
-    }
+nav a:hover {
+  background: #A9E6AE; /* slightly darker green */
+  border-radius: 0.5rem;
+  transform: scale(1.05);
+}
+
+nav a.active {
+  background: #C1F4C5; /* light green */
+  border-radius: 0.5rem;
+  font-weight: 700;
+  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.1);
+}
 
     .card {
       background: #fff;
@@ -75,8 +85,9 @@
       box-shadow: 6px 6px 0 #888;
       padding: 1.5rem;
       margin: 2rem auto;
-      max-width: 700px;
+      max-width: 900px;
       transition: all 0.2s ease;
+      
     }
 
     .card:hover {
@@ -125,16 +136,41 @@
       text-align: center;
       margin-top: 4rem;
       color: #888;
-      font-size: 0.85rem;
+      font-size:
+       0.85rem;
     }
+
+    .intro-bold {
+      font-weight: 700;
+      font-size: 1.05rem;
+      /* color: #111; */
+      text-shadow: 0.1px 0.1px #111
+    }
+    /* Make text inside .card paragraphs and lists use Inter instead of Space Mono */
+/* Card body text with smaller, cleaner font */
+.card p,
+.card li,
+.card small {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;       /* Smaller size */
+  line-height: 1.5;         /* Keep good spacing */
+}
+
+/* Card headings stay Space Mono */
+.card h2 {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.3rem;         /* Optional: Slightly smaller heading too */
+}
   </style>
 </head>
 <body>
-  <div style="display: flex; max-width: 1200px; margin: 0 auto;">
+  <div style="display: flex; max-width: 1400px; margin: 0 auto;">
     <aside style="width: 250px; padding: 2rem; font-family: 'Space Mono', monospace;">
-      <h2 style="margin-top: 0;">Hi!</h2>
-      <h3 style="margin-top: 0; color: #5a5a5a;">Thankyou for visiting</h3>
-      <p>My name is <strong>Anjali</strong> and I talk about my very unintelligent mistakes as a ML learner. I hope this helps you not make the same mistakes, or atleast have a good laugh :D </p>
+      <h2 class="intro-bold" style="margin-top: 0;">Hi!</h2>
+      <h3 class="intro-bold" style="margin-top: 0; color: #5a5a5a;">Thankyou for visiting</h3>
+      <p class="intro-bold">
+        My name is <strong>Anjali</strong> and I talk about my very unintelligent mistakes as a ML learner. I hope this helps you not make the same mistakes, or at least have a good laugh :D 
+      </p>
 
       <a href="mailto:anjali.sarawgi9@gmail.com" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
         <!-- Email Icon -->
@@ -162,14 +198,15 @@
       <header>learning rate too high<span class="cursor">_</span></header>
 
       <nav>
+        <a href="#" data-tab="about" class="active" >about me</a>
+        <a href="#" data-tab="loss-infinity">Learning rate too high?</a>
         <a href="#" data-tab="wrong-script">wrong script</a>
-        <a href="#" data-tab="loss-infinity">loss infinity</a>
+
         <a href="#" data-tab="raw-text">raw text to gnn</a>
         <a href="#" data-tab="shuffled-labels">shuffled labels</a>
-        <a href="#" data-tab="about">about</a>
       </nav>
 
-      <div class="card" data-tab-content="wrong-script">
+      <div class="card" data-tab-content="wrong-script" style="display: none;">
         <div class="tag">bug</div><div class="tag">torch</div>
         <h2>correct code ... wrong script in training</h2>
         <small>🗓️ May, 2025</small>
@@ -197,11 +234,22 @@
         <p>I shuffled my data and accidentally shuffled the labels *separately*.<br>The model got creative, but not in a good way.</p>
       </div>
 
-      <div class="card" data-tab-content="about" style="display: none;">
-        <div class="tag">me</div><div class="tag">blog</div>
-        <h2>About this blog</h2>
-        <small>🗓️ Apr 1, 2025</small>
-        <p>This is my collection of “oops” moments as an ML student. I hope you find them relatable, funny, or at least educational :)</p>
+      <div class="card" data-tab-content="about" style="display: block;">
+        <div class="tag">me</div>
+        <!-- <h2>About me</h2> -->
+        <small>🗓️ September, 2025</small>
+        <!-- <h2>Hi, I'm Anjali ✨</h2> -->
+        <p>I'm a Master's  of Statistics and Data Science student at LMU, Munich. I really enjoy working with domain experts to create machine learning based solutions to their problems. I like exploring different fields because I think each one comes with some challenges, and I learn the most when I am faced with these challenges.        </p>
+        <p>I also believe that AI/ML models are powerful tools, and helping people from different domains use these technologies is fulfilling for me. So, I make conscious efforts to find opportunities where I get to push myself to learn, apply what I know, and contribute, with an attempt to always keep my learning curve in an increasing trend.</p>  
+          
+        <p>Some things I have worked/am working on are:</p>
+        <ul>
+          <li><strong>Graph Neural Networks</strong> -> I am using GNNs to detect functional subcircuits (e.g., Sbox, key expansion) in digital circuit netlists. This is a part of my master's thesis.
+          <li><strong>Low-Resource ML</strong> -> I collaborated with a historian to build a handwritten text model for 18th and 19th century manuscripts to enable automatic transcriptions (repo to be released soon!)
+            <li><strong>more to come ...</strong>
+
+        </ul>
+          
       </div>
 
       <footer>
@@ -214,18 +262,24 @@
   <script>
     const tabs = document.querySelectorAll('nav a');
     const cards = document.querySelectorAll('[data-tab-content]');
-
+  
     tabs.forEach(tab => {
       tab.addEventListener('click', (e) => {
         e.preventDefault();
         const target = tab.getAttribute('data-tab');
-
+  
         // Hide all cards
         cards.forEach(card => {
           card.style.display = 'none';
         });
-
-        // Show matching card
+  
+        // Remove 'active' class from all tabs
+        tabs.forEach(t => t.classList.remove('active'));
+  
+        // Add 'active' to clicked tab
+        tab.classList.add('active');
+  
+        // Show the matching card
         const activeCard = document.querySelector(`[data-tab-content="${target}"]`);
         if (activeCard) activeCard.style.display = 'block';
       });
