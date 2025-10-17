@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="Learning Rate Too High – Machine Learning Mistakes by Anjali Sarawgi">
+  <meta name="description" content="A lighthearted blog documenting my ML experiments, mistakes, and lessons learned.">
+  <meta name="author" content="Anjali Sarawgi">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://anjalisarawgi.github.io/learning_rate_too_high/">
   <title>learning rate too high</title>
   <!-- <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Press+Start+2P&display=swap" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Press+Start+2P&family=Inter&display=swap" rel="stylesheet">
@@ -161,6 +166,10 @@ nav a.active {
   font-family: 'Space Mono', monospace;
   font-size: 1.3rem;         /* Optional: Slightly smaller heading too */
 }
+ul li {
+  margin-bottom: 0.7rem; /* adjust value as needed */
+  line-height: 1.6; /* optional: improves readability */
+}
   </style>
 </head>
 <body>
@@ -169,7 +178,7 @@ nav a.active {
       <h2 class="intro-bold" style="margin-top: 0;">Hi!</h2>
       <h3 class="intro-bold" style="margin-top: 0; color: #5a5a5a;">Thankyou for visiting</h3>
       <p class="intro-bold">
-        My name is <strong>Anjali</strong> and I talk about my very unintelligent mistakes as a ML learner. I hope this helps you not make the same mistakes, or at least have a good laugh :D 
+        My name is <strong>Anjali</strong> and I talk about my very unintelligent mistakes as a ML learner. I hope this helps you not make the same mistakes, learn a little more about me or at least have a good laugh :D 
       </p>
 
       <a href="mailto:anjali.sarawgi9@gmail.com" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
@@ -188,6 +197,24 @@ nav a.active {
         <span>LinkedIn</span>
       </a>
 
+      <!-- GitHub -->
+      <a href="https://github.com/anjalisarawgi" target="_blank" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0C5.37 0 0 5.37 0 12a12 12 0 008.21 11.43c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.35-1.75-1.35-1.75-1.1-.76.08-.74.08-.74 1.22.09 1.87 1.25 1.87 1.25 1.08 1.85 2.84 1.31 3.54 1 .11-.79.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.91 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1-.32 3.29 1.23A11.45 11.45 0 0112 6.84c1.02.01 2.04.14 3 .42 2.29-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.6-2.82 5.61-5.5 5.91.43.37.81 1.09.81 2.21v3.27c0 .32.22.69.83.57A12 12 0 0024 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+        <span>GitHub</span>
+      </a>
+
+
+      <!-- Google Scholar -->
+      <a href="https://scholar.google.com/citations?user=S54iOkAAAAAJ&hl=en" target="_blank" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2L1 12l3.29 3.29L12 6.41l7.71 8.88L23 12zM12 8.5l-6 6V22h12v-7.5l-6-6z"/>
+        </svg>
+        <span>Google Scholar</span>
+      </a>
+
+
       <div class="now-block">
         <h3>Now</h3>
         <p>🌈 Writing my thesis<br>👾 Working on this blog <br>🥐 Obsessing over Donuts</p>
@@ -196,14 +223,17 @@ nav a.active {
 
     <main style="flex: 1;">
       <header>learning rate too high<span class="cursor">_</span></header>
-
       <nav>
-        <a href="#" data-tab="about" class="active" >about me</a>
+        <a href="#" data-tab="about" class="active" >About me</a>
         <a href="#" data-tab="loss-infinity">Learning rate too high?</a>
-        <a href="#" data-tab="wrong-script">wrong script</a>
+        <!-- <a href="#" data-tab="raw-text">uncertainity?</a> -->
+        <a href="#" data-tab="wrong-script">wrong script AGAIN!</a>
+        <!-- <a href="#" data-tab="wrong-script">package version/s</a> -->
+        <a href="#" data-tab="wrong-script">parameters are IMP</a>
+        <!-- <a href="#" data-tab="wrong-script">some research directions i think of</a> -->
+        <!-- <a href="#" data-tab="wrong-script">the data problem</a> -->
 
-        <a href="#" data-tab="raw-text">raw text to gnn</a>
-        <a href="#" data-tab="shuffled-labels">shuffled labels</a>
+        <!-- <a href="#" data-tab="shuffled-labels">shuffled labels</a> -->
       </nav>
 
       <div class="card" data-tab-content="wrong-script" style="display: none;">
@@ -241,20 +271,19 @@ nav a.active {
         <!-- <h2>Hi, I'm Anjali ✨</h2> -->
         <p>I'm a Master's  of Statistics and Data Science student at LMU, Munich. I really enjoy working with domain experts to create machine learning based solutions to their problems. I like exploring different fields because I think each one comes with some challenges, and I learn the most when I am faced with these challenges.        </p>
         <p>I also believe that AI/ML models are powerful tools, and helping people from different domains use these technologies is fulfilling for me. So, I make conscious efforts to find opportunities where I get to push myself to learn, apply what I know, and contribute, with an attempt to always keep my learning curve in an increasing trend.</p>  
-          
         <p>Some things I have worked/am working on are:</p>
         <ul>
           <li><strong>Graph Neural Networks</strong> -> I am using GNNs to detect functional subcircuits (e.g., Sbox, key expansion) in digital circuit netlists. This is a part of my master's thesis.
-          <li><strong>Low-Resource ML</strong> -> I collaborated with a historian to build a handwritten text model for 18th and 19th century manuscripts to enable automatic transcriptions (repo to be released soon!)
-            <li><strong>more to come ...</strong>
-
+          <li><strong>Low-Resource ML</strong> -> I collaborated with a historian to build a handwritten text model for 18th and 19th century manuscripts to enable automatic transcriptions (repo to be released soon!) [<i>cannot say alot about this since we have a anonymous conference submission</i>]
+          <li><strong>Psycological Research</strong> -> At LMU, Munich, I worked for the Phone study project (https://phonestudy.org/en/), where they capture and study mobile sensing data for finding methods to understand the users mental health. Here, very interestingly I worked on the keyboard data, where I prepared the data, and created features to see if users typing behaviour can indicate depression.
+          <li><strong>Cultural bias</strong> -> Very recently, I have been very intrigued with the cultural stereotypes most large language models capture, and I have been trying to infer these behaviours to see for another possible research direction i could work on this winter of 2025. Particularly, I am curious to evaluate how these models handle smaller or less represented regions, for example Nepal. I think it would be very interesting to see if we can identify and solve for the biases in the dataset it was trained on itself.
         </ul>
           
       </div>
 
-      <footer>
+      <!-- <footer>
         💥 for more, please wait for me to have another breakdown
-      </footer>
+      </footer> -->
     </main>
   </div>
 
