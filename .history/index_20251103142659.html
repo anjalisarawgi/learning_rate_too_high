@@ -260,28 +260,18 @@ nav a.active {
   }
 }
 
-
-.emoji {
-  display: inline-block;
-  animation: emojiWiggle 2.5s infinite ease-in-out;
-  transform-origin: center;
+.now-block {
+  animation: floatyNow 5s ease-in-out infinite;
 }
 
-@keyframes emojiWiggle {
+@keyframes floatyNow {
   0%, 100% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(8deg);
+    transform: translateY(0);
   }
   50% {
-    transform: rotate(-8deg);
-  }
-  75% {
-    transform: rotate(4deg);
+    transform: translateY(-5px);
   }
 }
-
 .cute-photo:hover {
   box-shadow: 0 0 10px rgba(188, 162, 255, 0.4);
   transform: scale(1.05);
@@ -309,19 +299,6 @@ ul li {
   margin-bottom: 0.7rem; /* adjust value as needed */
   line-height: 1.6; /* optional: improves readability */
 }
-
-footer .boom {
-  display: inline-block;
-  animation: boomPulse 2s infinite;
-  filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.4));
-}
-
-@keyframes boomPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-}
-
-
   </style>
 </head>
 <body>
@@ -376,12 +353,7 @@ footer .boom {
 
       <div class="now-block">
         <h3>Now</h3>
-        <!-- <p>🌈 Writing my thesis<br>👾 Working on this blog <br>🥐 Obsessing over Donuts</p> -->
-        <p>
-          <span class="emoji">🌈</span> Writing my thesis<br>
-          <span class="emoji">👾</span> Working on this blog<br>
-          <span class="emoji">🥐</span> Obsessing over Donuts
-        </p>
+        <p>🌈 Writing my thesis<br>👾 Working on this blog <br>🥐 Obsessing over Donuts</p>
       </div>
     </aside>
 
@@ -446,7 +418,7 @@ footer .boom {
         </ul>
       </div>
       <footer>
-        <span class="boom">💥</span> for more, please wait for me to have another breakdown
+        💥 for more, please wait for me to have another breakdown
       </footer>
       <!-- <img src="Cloud.png" alt="Cloud mascot" class="cloud-mascot"> -->
     </main>

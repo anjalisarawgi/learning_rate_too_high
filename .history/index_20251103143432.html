@@ -312,15 +312,16 @@ ul li {
 
 footer .boom {
   display: inline-block;
-  animation: boomPulse 2s infinite;
-  filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.4));
+  animation: boomWiggle 1.2s infinite ease-in-out;
 }
 
-@keyframes boomPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
+@keyframes boomWiggle {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(5deg); }
+  50%  { transform: rotate(-5deg); }
+  75%  { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
 }
-
 
   </style>
 </head>
