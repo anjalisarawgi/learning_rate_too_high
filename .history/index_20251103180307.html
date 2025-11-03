@@ -14,7 +14,7 @@
   <style>
     body {
       font-family: 'Space Mono', monospace;
-      background-color: #F9F6F2; 
+      background-color: #F9F6F2;
       margin: 0;
       padding: 2rem;
       /* background-image: radial-gradient(#ebe9e9 2px, transparent 1px); */
@@ -129,22 +129,17 @@ nav a.active {
     }
 
     .now-block {
-  background: rgb(253, 252, 245);
-  border: 2px dashed #E4722C;   /* soft coral-red border */
-  box-shadow: 4px 4px 0 #E4722C; /* peach-orange shadow */
-  border-radius: 0.85rem;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #000;
-  margin-top: 1.5rem;
-  transition: all 0.25s ease;
-}
-
-.now-block:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 #ffccb6;
-  background: #fff4f0;
-}
+      background: #fff ;
+      font-size: 0.9rem;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      margin-top: 2rem;
+      /* box-shadow: 4px 4px 0 #bca2ff; soft purple shadow */
+      /* border: 2px dashed #8e72d6; retro purple border */
+      box-shadow: 4px 4px 0 #E66B6B; /* balanced warm red shadow */
+  border: 2px dashed #D24B4B;   /* slightly deeper coral border */
+      color: #000;
+    }
     footer {
       text-align: center;
       margin-top: 4rem;
@@ -314,63 +309,6 @@ ul li {
   margin-bottom: 0.7rem; /* adjust value as needed */
   line-height: 1.6; /* optional: improves readability */
 }
-.project-card {
-  background: #F5F9FF;
-  border: 2px dashed #000;
-  border-radius: 1rem;
-  box-shadow: 4px 4px 0 #000;
-  padding: 1rem 1.25rem;
-  margin: 0;
-  transition: all 0.25s ease;
-}
-
-
-.project-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 #666;
-  background: #eff5ff;
-}
-
-.project-card h4 {
-  font-family: 'Space Mono', monospace;
-  font-size: 1.1rem;
-  margin: 0.4rem 0;
-  color: #222;
-}
-
-.project-card p {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.55;
-  color: #333;
-}
-
-.project-card .tag {
-  display: inline-block;
-  background: #C1F4C5;
-  border: 1px solid #000;
-  border-radius: 0.5rem;
-  font-size: 0.7rem;
-  font-weight: bold;
-  padding: 0.2rem 0.6rem;
-  margin-bottom: 0.4rem;
-  color: #000;
-  box-shadow: 2px 2px 0 #000;
-}
-
-.projects-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-.projects-section h3 {
-  font-family: 'Space Mono', monospace;
-  font-size: 1.2rem;
-  margin-top: 2rem;
-  color: #222;
-  text-shadow: 1px 1px #fff;
-}
 
 footer .boom {
   display: inline-block;
@@ -499,7 +437,9 @@ footer .boom {
         <p>I'm a Master's  of Statistics and Data Science student at LMU, Munich. I really enjoy working with domain experts to create machine learning based solutions to their problems. I like exploring different fields because I think each one comes with some challenges, and I learn the most when I am faced with these challenges.        </p>
         <p>I also believe that AI/ML models are powerful tools, and helping people from different domains use these technologies is fulfilling for me. So, I make conscious efforts to find opportunities where I get to push myself to learn, apply what I know, and contribute, with an attempt to always keep my learning curve in an increasing trend.</p>  
         <p>Some things I have worked/am working on are:</p>
-        <div class="projects-section">        
+        <div class="projects-section">
+          <h3>Things I've worked on</h3>
+        
           <div class="project-card">
             <div class="tag">GNN</div>
             <h4>Graph Neural Networks</h4>
