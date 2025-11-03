@@ -14,11 +14,11 @@
   <style>
     body {
       font-family: 'Space Mono', monospace;
-      background-color: #F9F6F2;
+      background-color: #fdfaf4;
       margin: 0;
       padding: 2rem;
       /* background-image: radial-gradient(#ebe9e9 2px, transparent 1px); */
-      background-image: radial-gradient(#E0DBD2 2px, transparent 2px);
+      background-image: radial-gradient(#ebe9e9 2px, transparent 2px);
       background-size: 22px 22px;
     }
 
@@ -39,7 +39,7 @@
       transition: all 0.2s ease;
       
     }
-    
+
     .cursor {
       display: inline-block;
       margin-left: 0.3rem;
@@ -93,7 +93,6 @@ nav a.active {
       max-width: 900px;
       transition: all 0.2s ease;
       
-      
     }
 
     .card:hover {
@@ -129,15 +128,13 @@ nav a.active {
     }
 
     .now-block {
-      background: #fff ;
+      background: #fff; /* light lavender background */
       font-size: 0.9rem;
       padding: 1rem;
       border-radius: 0.75rem;
       margin-top: 2rem;
-      /* box-shadow: 4px 4px 0 #bca2ff; soft purple shadow */
-      /* border: 2px dashed #8e72d6; retro purple border */
-      box-shadow: 4px 4px 0 #E66B6B; /* balanced warm red shadow */
-  border: 2px dashed #D24B4B;   /* slightly deeper coral border */
+      box-shadow: 4px 4px 0 #bca2ff; /* soft purple shadow */
+      border: 2px dashed #8e72d6; /* retro purple border */
       color: #000;
     }
     footer {
@@ -155,39 +152,22 @@ nav a.active {
       text-shadow: 0.1px 0.1px #111
     }
     .cute-photo {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border: 3px solid #000;
-  box-shadow: 4px 4px 0 #bca2ff;
-  /* box-shadow: 4px 4px 0 #a2d2ff; soft blue shadow */
-    /* box-shadow: 4px 4px 0 #f4a7a0; pastel red shadow */
-  background-color: #fff8e1;
-  background: radial-gradient(circle at 30% 30%, #fff8e1 0%, #f2e3ff 80%);
-  border-radius: 50%;
-  margin: 0 auto 1.5rem auto;
-  display: block;
-
-  /* Proper flower mask pattern */
-  mask: radial-gradient(circle at center, black 60%, transparent 61%) 
-        repeat-conic-gradient(black 0deg 20deg, transparent 20deg 40deg);
-  -webkit-mask: radial-gradient(circle at center, black 60%, transparent 61%) 
-                repeat-conic-gradient(black 0deg 20deg, transparent 20deg 40deg);
-  mask-composite: intersect;
-  -webkit-mask-composite: destination-in;
-
-  transition: transform 0.3s ease;
-  transform: rotate(-90deg);
-}
-
-.cute-photo:hover {
-  box-shadow: 0 0 10px rgba(188, 162, 255, 0.4);
-  transform: scale(1.05);
-}
-    /* .cute-photo:hover {
-  transform: rotate(2deg) scale(1.05);
-  transition: all 0.3s ease;
-} */
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid #000;
+      box-shadow: 4px 4px 0 #bca2ff;
+      /* scalloped / starburst look */
+      clip-path: polygon(
+        50% 0%, 63% 12%, 80% 6%, 88% 24%, 100% 36%, 92% 52%, 
+        100% 68%, 85% 74%, 76% 88%, 60% 82%, 50% 100%, 40% 82%, 
+        24% 88%, 15% 74%, 0% 68%, 8% 52%, 0% 36%, 12% 24%, 
+        20% 6%, 37% 12%
+      );
+      border-radius: 0; keep polygon edges visible
+      transform: rotate(-90deg);
+    }
     /* Make text inside .card paragraphs and lists use Inter instead of Space Mono */
 /* Card body text with smaller, cleaner font */
 .card p,
@@ -213,7 +193,7 @@ ul li {
   <div style="display: flex; max-width: 1400px; margin: 0 auto;">
     <aside style="width: 250px; padding: 2rem; font-family: 'Space Mono', monospace;">
       <img 
-      src="myphoto2.jpeg" 
+      src="myphoto.jpeg" 
       alt="Anjali Sarawgi"
       class="cute-photo">
       <h2 class="intro-bold" style="margin-top: 0;">Hi!</h2>
@@ -230,12 +210,13 @@ ul li {
         <span>Email</span>
       </a>
 
-      <!-- <a href="https://www.linkedin.com/in/anjali-sarawgi" target="_blank" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
+      <a href="https://www.linkedin.com/in/anjali-sarawgi" target="_blank" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
+        <!-- LinkedIn Icon -->
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
           <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.49h4V24h-4V8.49zm7.5 0h3.84v2.11h.05c.54-1.01 1.84-2.07 3.79-2.07 4.05 0 4.8 2.66 4.8 6.12V24h-4v-7.79c0-1.86-.03-4.26-2.59-4.26-2.59 0-2.99 2.02-2.99 4.11V24h-4V8.49z"/>
         </svg>
         <span>LinkedIn</span>
-      </a> -->
+      </a>
 
       <!-- GitHub -->
       <a href="https://github.com/anjalisarawgi" target="_blank" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
@@ -247,12 +228,12 @@ ul li {
 
 
       <!-- Google Scholar -->
-      <!-- <a href="https://scholar.google.com/citations?user=S54iOkAAAAAJ&hl=en" target="_blank" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
+      <a href="https://scholar.google.com/citations?user=S54iOkAAAAAJ&hl=en" target="_blank" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 2L1 12l3.29 3.29L12 6.41l7.71 8.88L23 12zM12 8.5l-6 6V22h12v-7.5l-6-6z"/>
         </svg>
         <span>Google Scholar</span>
-      </a> -->
+      </a>
 
 
       <div class="now-block">
@@ -322,9 +303,9 @@ ul li {
           
       </div>
 
-      <footer>
+      <!-- <footer>
         💥 for more, please wait for me to have another breakdown
-      </footer>
+      </footer> -->
     </main>
   </div>
 
