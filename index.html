@@ -14,12 +14,14 @@
   <style>
     body {
       font-family: 'Space Mono', monospace;
-      background-color: #F9F6F2; 
+      background-color: #F9F6F2;
       margin: 0;
       padding: 2rem;
       /* background-image: radial-gradient(#ebe9e9 2px, transparent 1px); */
-      background-image: radial-gradient(#E0DBD2 2px, transparent 2px);
-      background-size: 22px 22px;
+      /* background-image: radial-gradient(#E0DBD2 2px, transparent 2px); */
+      /* background-size: 22px 22px; */
+      background-image: radial-gradient(#E8E4DE 2px, transparent 2px);
+  background-size: 22px 22px;
     }
 
     header {
@@ -128,17 +130,7 @@ nav a.active {
       font-size: 1rem;
     }
 
-    .now-block {
-  background: rgb(253, 252, 249);
-  border: 2px dashed #d36b2b;   /* soft coral-red border */
-  box-shadow: 4px 4px 0 #d36b2b; /* peach-orange shadow */
-  border-radius: 0.85rem;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #000;
-  margin-top: 1.5rem;
-  transition: all 0.25s ease;
-}
+
 /* 
 .now-block:hover {
   transform: translate(-2px, -2px);
@@ -268,7 +260,7 @@ nav a.active {
 
 .emoji {
   display: inline-block;
-  animation: emojiWiggle 2.5s infinite ease-in-out;
+  animation: emojiWiggle 1.5s infinite ease-in-out;
   transform-origin: center;
 }
 
@@ -383,6 +375,90 @@ footer .boom {
   50% { transform: scale(1.2); }
 }
 
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.2rem 0;
+}
+
+.contact-links a {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  background: #fffef7;
+  border: 2px dashed #000;
+  border-radius: 0.7rem;
+  padding: 0.35rem 0.8rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  box-shadow: 3px 3px 0 #bca2ff;
+  transition: all 0.2s ease;
+  text-align: center;
+  min-width: 90px;
+}
+
+.contact-links a:hover {
+  background: #C1F4C5;
+  box-shadow: 4px 4px 0 #000;
+  transform: translate(-2px, -2px);
+}
+
+.contact-links a span {
+  margin-right: 0.4rem;
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+.now-block {
+  position: relative;
+  background: #fffdfc;
+  border: 2px dashed #000;
+  border-radius: 1rem;
+  box-shadow: 4px 4px 0 #FB7DA8;
+  padding: 1.4rem 1.6rem 1.2rem 1.6rem;
+  margin-top: 2rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  color: #000;
+  transition: all 0.25s ease;
+  max-width: 220px; /* keeps it compact */
+}
+
+/* .now-block:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000;
+  background: #fff8e7;
+} */
+
+/* "Now" tab — fixed placement and better sizing */
+.now-block::before {
+  content: "Now";
+  position: absolute;
+  top: -0.9rem;
+  left: 1.4rem;
+  background: #FB7DA8;
+  border: 2px solid #000;
+  /* border-radius: 6px 6px 0 0; */
+  padding: 0.2rem 0.8rem 0.25rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 1px 1px 0 #000;
+  transform: rotate(-1deg);
+}
+
+/* List styling */
+.now-block p {
+  margin: 0;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.now-block .emoji {
+  margin-right: 0.5rem;
+  display: inline-block;
+  width: 1.2rem;
+  text-align: center;
+}
 
   </style>
 </head>
@@ -400,44 +476,36 @@ footer .boom {
       <h2 class="intro-bold" style="margin-top: 0;">Hi!</h2>
       <h3 class="intro-bold" style="margin-top: 0; color: #5a5a5a;">Thankyou for visiting</h3>
       <p class="intro-bold">
-        My name is <strong>Anjali</strong> and I talk about my very unintelligent mistakes as a ML learner. I hope this helps you not make the same mistakes, learn a little more about me or at least have a good laugh :D 
+        My name is <strong>Anjali</strong> and here, I talk about my research, interests and share some mistakes I have made as a ML learner. I hope this helps you learn a little more about me (and some have some laughs along the way) :D 
       </p>
-
-      <a href="mailto:anjali.sarawgi9@gmail.com" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
+      <div class="contact-links">
+        <a href="mailto:anjali.sarawgi9@gmail.com">Email</a>
+        <a href="cv.pdf" target="_blank">CV</a>
+        <a href="https://github.com/anjalisarawgi" target="_blank">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=S54iOkAAAAAJ&hl=en" target="_blank">Scholar</a>
+        <a href="https://www.linkedin.com/in/anjali-sarawgi/" target="_blank">LinkedIn</a>
+      </div>
+      <!-- <a href="mailto:anjali.sarawgi9@gmail.com" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;"> -->
         <!-- Email Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
           <path d="M2 4h20v16H2V4zm2 2v.511l8 5.334 8-5.334V6H4zm0 2.489V18h16V8.489l-8 5.333-8-5.333z"/>
         </svg>
         <span>Email</span>
-      </a>
-
-      <!-- <a href="https://www.linkedin.com/in/anjali-sarawgi" target="_blank" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.49h4V24h-4V8.49zm7.5 0h3.84v2.11h.05c.54-1.01 1.84-2.07 3.79-2.07 4.05 0 4.8 2.66 4.8 6.12V24h-4v-7.79c0-1.86-.03-4.26-2.59-4.26-2.59 0-2.99 2.02-2.99 4.11V24h-4V8.49z"/>
-        </svg>
-        <span>LinkedIn</span>
       </a> -->
 
+
       <!-- GitHub -->
-      <a href="https://github.com/anjalisarawgi" target="_blank" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
+      <!-- <a href="https://github.com/anjalisarawgi" target="_blank" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 0C5.37 0 0 5.37 0 12a12 12 0 008.21 11.43c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.35-1.75-1.35-1.75-1.1-.76.08-.74.08-.74 1.22.09 1.87 1.25 1.87 1.25 1.08 1.85 2.84 1.31 3.54 1 .11-.79.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.91 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1-.32 3.29 1.23A11.45 11.45 0 0112 6.84c1.02.01 2.04.14 3 .42 2.29-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.6-2.82 5.61-5.5 5.91.43.37.81 1.09.81 2.21v3.27c0 .32.22.69.83.57A12 12 0 0024 12c0-6.63-5.37-12-12-12z"/>
         </svg>
         <span>GitHub</span>
-      </a>
-
-
-      <!-- Google Scholar -->
-      <!-- <a href="https://scholar.google.com/citations?user=S54iOkAAAAAJ&hl=en" target="_blank" style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #000;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2L1 12l3.29 3.29L12 6.41l7.71 8.88L23 12zM12 8.5l-6 6V22h12v-7.5l-6-6z"/>
-        </svg>
-        <span>Google Scholar</span>
       </a> -->
 
 
+
       <div class="now-block">
-        <h3>Now</h3>
+        <!-- <h3>Now</h3> -->
         <!-- <p>🌈 Writing my thesis<br>👾 Working on this blog <br>🥐 Obsessing over Donuts</p> -->
         <p>
           <span class="emoji">🌈</span> Writing my thesis<br>
@@ -448,11 +516,14 @@ footer .boom {
     </aside>
 
     <main style="flex: 1;">
-      <header>learning rate too high<span class="cursor">_</span></header>
+      <header>learning rate too high  <span style="font-size: 1rem; font-weight: 400;">(but improving)</span>
+      <span class="cursor">_</span></header>
       <nav>
         <a href="#" data-tab="about" class="active" >About me</a>
-        <a href="#" data-tab="loss-infinity">Learning rate too high?</a>
-        <a href="#" data-tab="loss-infinity">mistakes!</a>
+        <a href="#" data-tab="other-projects">Other Projects</a>
+        <a href="#" data-tab="publications">Publications</a>
+        <a href="#" data-tab="learning-rate-too-high">Learning rate too high</a>
+        <!-- <a href="#" data-tab="loss-infinity">mistakes!</a> -->
         <!-- <a href="#" data-tab="raw-text">uncertainity?</a> -->
         <!-- <a href="#" data-tab="wrong-script">wrong script AGAIN!</a> -->
         <!-- <a href="#" data-tab="wrong-script">package version/s</a> -->
@@ -549,7 +620,7 @@ footer .boom {
         <!-- </ul> -->
       </div>
       <footer>
-        <span class="boom">💥</span> for more, please wait for me to have another breakdown
+        <span class="boom">💥</span> more updates coming soon
       </footer>
       <!-- <img src="Cloud.png" alt="Cloud mascot" class="cloud-mascot"> -->
     </main>
