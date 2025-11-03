@@ -194,71 +194,6 @@ nav a.active {
 }
 
 
-.profile-photo {
-  position: relative;
-  z-index: 2;  /* photo stays in front */
-  width: 200px; /* adjust to your photo size */
-  border-radius: 12px;
-}
-
-.photo-container {
-  position: relative;
-  width: 160px;      /* match your photo size */
-  height: 160px;
-  margin: 0 auto 2rem auto;
-}
-
-.cute-photo {
-  position: relative;
-  z-index: 2;         /* bring photo above */
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border: 3px solid #000;
-  box-shadow: 4px 4px 0 #bca2ff;
-  background-color: #fff8e1;
-  background: radial-gradient(circle at 30% 30%, #fff8e1 0%, #f2e3ff 80%);
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto;
-  transition: transform 0.3s ease;
-  transform: rotate(-90deg);
-}
-
-.cloud-behind {
-  position: absolute;
-  top: 20px;
-  left: -100px;
-  width: 120px;
-  z-index: 1;          /* this ensures it’s BEHIND the photo */
-  image-rendering: pixelated;
-  animation: floatCloud 18s ease-in-out infinite;
-  opacity: 0.8;
-  pointer-events: none; /* prevents blocking clicks on the photo */
-}
-
-@keyframes floatCloud {
-  0% {
-    transform: translateX(-60px);
-    opacity: 0.6;
-  }
-  25% {
-    transform: translateX(0);
-    opacity: 0.9;
-  }
-  50% {
-    transform: translateX(60px);
-    opacity: 0.9;
-  }
-  75% {
-    transform: translateX(0);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateX(-60px);
-    opacity: 0.6;
-  }
-}
 .cute-photo:hover {
   box-shadow: 0 0 10px rgba(188, 162, 255, 0.4);
   transform: scale(1.05);
@@ -291,14 +226,10 @@ ul li {
 <body>
   <div style="display: flex; max-width: 1400px; margin: 0 auto;">
     <aside style="width: 250px; padding: 2rem; font-family: 'Space Mono', monospace;">
-      <!-- <img 
+      <img 
       src="myphoto2.jpeg" 
       alt="Anjali Sarawgi"
-      class="cute-photo"> -->
-      <div class="photo-container">
-        <img src="cloud.png" alt="Cloud mascot" class="cloud-behind">
-        <img src="myphoto2.jpeg" alt="Anjali photo" class="cute-photo">
-      </div>
+      class="cute-photo">
       <h2 class="intro-bold" style="margin-top: 0;">Hi!</h2>
       <h3 class="intro-bold" style="margin-top: 0; color: #5a5a5a;">Thankyou for visiting</h3>
       <p class="intro-bold">
@@ -407,7 +338,7 @@ ul li {
       <footer>
         💥 for more, please wait for me to have another breakdown
       </footer>
-      <!-- <img src="Cloud.png" alt="Cloud mascot" class="cloud-mascot"> -->
+      <img src="pumpkin.png" alt="Pumpkin mascot" class="pumpkin-mascot">
     </main>
   </div>
 

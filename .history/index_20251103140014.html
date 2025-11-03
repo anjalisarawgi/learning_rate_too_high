@@ -193,6 +193,10 @@ nav a.active {
   transform: rotate(8deg) scale(1.1);
 }
 
+.photo-container {
+  position: relative;
+  display: inline-block;
+}
 
 .profile-photo {
   position: relative;
@@ -201,62 +205,29 @@ nav a.active {
   border-radius: 12px;
 }
 
-.photo-container {
-  position: relative;
-  width: 160px;      /* match your photo size */
-  height: 160px;
-  margin: 0 auto 2rem auto;
-}
-
-.cute-photo {
-  position: relative;
-  z-index: 2;         /* bring photo above */
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border: 3px solid #000;
-  box-shadow: 4px 4px 0 #bca2ff;
-  background-color: #fff8e1;
-  background: radial-gradient(circle at 30% 30%, #fff8e1 0%, #f2e3ff 80%);
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto;
-  transition: transform 0.3s ease;
-  transform: rotate(-90deg);
-}
-
 .cloud-behind {
   position: absolute;
-  top: 20px;
-  left: -100px;
+  top: 10px;           /* vertical placement behind photo */
+  left: -120px;        /* start slightly off to the left */
   width: 120px;
-  z-index: 1;          /* this ensures it’s BEHIND the photo */
+  z-index: 1;          /* behind photo */
   image-rendering: pixelated;
-  animation: floatCloud 18s ease-in-out infinite;
-  opacity: 0.8;
-  pointer-events: none; /* prevents blocking clicks on the photo */
+  animation: floatCloud 18s linear infinite;
+  opacity: 0.8;        /* subtle, doesn’t overpower photo */
 }
 
 @keyframes floatCloud {
   0% {
-    transform: translateX(-60px);
-    opacity: 0.6;
-  }
-  25% {
     transform: translateX(0);
-    opacity: 0.9;
+    opacity: 0.7;
   }
   50% {
-    transform: translateX(60px);
-    opacity: 0.9;
-  }
-  75% {
-    transform: translateX(0);
-    opacity: 0.8;
+    transform: translateX(200px);
+    opacity: 1;
   }
   100% {
-    transform: translateX(-60px);
-    opacity: 0.6;
+    transform: translateX(0);
+    opacity: 0.7;
   }
 }
 .cute-photo:hover {
@@ -297,7 +268,7 @@ ul li {
       class="cute-photo"> -->
       <div class="photo-container">
         <img src="cloud.png" alt="Cloud mascot" class="cloud-behind">
-        <img src="myphoto2.jpeg" alt="Anjali photo" class="cute-photo">
+        <img src="me.png" alt="Anjali photo" class="profile-photo">
       </div>
       <h2 class="intro-bold" style="margin-top: 0;">Hi!</h2>
       <h3 class="intro-bold" style="margin-top: 0; color: #5a5a5a;">Thankyou for visiting</h3>

@@ -203,9 +203,10 @@ nav a.active {
 
 .photo-container {
   position: relative;
-  width: 160px;      /* match your photo size */
+  width: 160px;
   height: 160px;
   margin: 0 auto 2rem auto;
+  overflow: hidden; /* hides cloud outside bounds */
 }
 
 .cute-photo {
@@ -225,6 +226,18 @@ nav a.active {
   transform: rotate(-90deg);
 }
 
+.cloud-float {
+  position: absolute;
+  top: 30px;                 /* vertical placement */
+  left: -150px;              /* start offscreen to the left */
+  width: 100px;
+  image-rendering: pixelated;
+  z-index: 1;                /* behind the photo */
+  opacity: 0.8;
+  animation: cloudAcross 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
 .cloud-behind {
   position: absolute;
   top: 20px;
@@ -237,28 +250,27 @@ nav a.active {
   pointer-events: none; /* prevents blocking clicks on the photo */
 }
 
-@keyframes floatCloud {
+@keyframes cloudAcross {
   0% {
-    transform: translateX(-60px);
-    opacity: 0.6;
-  }
-  25% {
     transform: translateX(0);
-    opacity: 0.9;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
   }
   50% {
-    transform: translateX(60px);
-    opacity: 0.9;
+    transform: translateX(260px); /* moves across full photo */
+    opacity: 1;
   }
-  75% {
-    transform: translateX(0);
-    opacity: 0.8;
+  90% {
+    opacity: 1;
   }
   100% {
-    transform: translateX(-60px);
-    opacity: 0.6;
+    transform: translateX(0);
+    opacity: 0;
   }
 }
+
 .cute-photo:hover {
   box-shadow: 0 0 10px rgba(188, 162, 255, 0.4);
   transform: scale(1.05);
