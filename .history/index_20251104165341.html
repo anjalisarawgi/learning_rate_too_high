@@ -59,39 +59,33 @@
   display: flex;
   justify-content: center;
   gap: 1.8rem;
-  margin-top: 1.2rem;
-  margin-bottom: 1.2rem;
+  margin-top: 0.8rem;
 }
 
 nav a {
   display: inline-block;
   font-family: 'Space Mono', monospace;
   font-size: 1.05rem;
-  color: #222;
+  color: #333;
   text-decoration: none;
-  border: 2px solid transparent; /* reserve space for border */
-  border-bottom: 2px dotted rgba(0, 0, 0, 0.35);
-  border-radius: 12px;
-  padding: 0.35rem 0.8rem; /* consistent padding for all */
-  margin-left: 0.5rem;
+  border-bottom: 2px dotted rgba(0, 0, 0, 0.3); /* dotted baseline */
+  padding: 0.25rem 0;
   transition: all 0.2s ease;
-  text-underline-offset: 4px;
 }
 
 nav a:hover {
   border-bottom: 2px dotted #000;
   color: #000;
-  transform: translateY(-1px);
 }
 
 nav a.active {
   background-color: #b7f5b3;
-  border: 2px solid #000; /* now just colors in the reserved border space */
-  border-bottom: 2px solid #000;
+  border: 2px solid #000;
+  border-radius: 12px;
+  border-bottom: 2px solid #000; /* solid baseline for active */
+  padding: 0.35rem 0.8rem;
   box-shadow: 2px 2px 0 #00000030;
-  transform: none;
 }
-
 
 
 .card {
