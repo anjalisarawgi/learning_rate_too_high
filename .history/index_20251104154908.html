@@ -306,12 +306,12 @@ ul li {
   transition: all 0.25s ease;
 }
 
-
+/* 
 .project-card:hover {
   transform: translate(-2px, -2px);
   box-shadow: 4px 4px 0 #666;
   background: #eff5ff;
-}
+} */
 
 .project-card h4 {
   font-family: 'Space Mono', monospace;
@@ -491,7 +491,37 @@ nav a:hover::after {
   opacity: 1;
 }
 
+/* Card base */
+.project-card {
+  background-color: #fafaff; /* very soft off-white-blue */
+  border: 1.5px dashed #bdbdbd;
+  border-radius: 12px;
+  padding: 1.2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
+/* Card hover effect (gentle lift) */
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 3px 3px 0px #e3e3e3;
+}
+
+/* Label/tag style */
+.project-label {
+  display: inline-block;
+  background-color: #fcefc7; /* soft yellow */
+  color: #3d3d3d;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Optional alternate label tones if you want variety */
+.project-label.green { background-color: #e6f4ea; }   /* soft green */
+.project-label.pink { background-color: #fde7ea; }    /* soft pink */
+.project-label.blue { background-color: #e7f0fd; }    /* soft blue */
   </style>
 </head>
 <body>
@@ -602,7 +632,8 @@ nav a:hover::after {
         <p>I'm a Master's  of Statistics and Data Science student at LMU, Munich. I really enjoy working with domain experts to create machine learning based solutions to their problems. I like exploring different fields because I think each one comes with some challenges, and I learn the most when I am faced with these challenges.        </p>
         <p>I also believe that AI/ML models are powerful tools, and helping people from different domains use these technologies is fulfilling for me. So, I make conscious efforts to find opportunities where I get to push myself to learn, apply what I know, and contribute, with an attempt to always keep my learning curve in an increasing trend.</p>  
         <p>Some things I have worked/am working on are:</p>
-        <div class="projects-section">        
+        <div class="projects-section">    
+          <div class="project-grid">    
           <div class="project-card">
             <div class="tag">GNN</div>
             <h4>Graph Neural Networks for Hardware Security</h4>
@@ -640,6 +671,7 @@ nav a:hover::after {
               especially for smaller or underrepresented regions — 
               and thinking about potential research directions to address this.
             </p>
+          </div>
           </div>
         </div>
         

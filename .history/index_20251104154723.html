@@ -306,12 +306,12 @@ ul li {
   transition: all 0.25s ease;
 }
 
-
+/* 
 .project-card:hover {
   transform: translate(-2px, -2px);
   box-shadow: 4px 4px 0 #666;
   background: #eff5ff;
-}
+} */
 
 .project-card h4 {
   font-family: 'Space Mono', monospace;
@@ -491,7 +491,57 @@ nav a:hover::after {
   opacity: 1;
 }
 
+.project-card {
+  background: #fffdfb; /* warm off-white */
+  border: 2px dashed #d8d3ca;
+  border-radius: 1rem;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 3px 3px 0 #e7e3dc;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 0 #d9d5cc;
+}
+
+/* heading + text */
+.project-card h4 {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #222;
+}
+.project-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #333;
+}
+
+/* soft label colors */
+.project-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.6rem;
+  color: #333;
+  border: 1px solid #ccc;
+}
+.project-label.blue { background: #e9f0ff; }
+.project-label.pink { background: #ffe9f3; }
+.project-label.green { background: #eaf8e5; }
+.project-label.purple { background: #f2e9ff; }
+
+/* responsive grid — 3 per row */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.6rem;
+  margin-top: 1.5rem;
+}
   </style>
 </head>
 <body>
@@ -602,46 +652,32 @@ nav a:hover::after {
         <p>I'm a Master's  of Statistics and Data Science student at LMU, Munich. I really enjoy working with domain experts to create machine learning based solutions to their problems. I like exploring different fields because I think each one comes with some challenges, and I learn the most when I am faced with these challenges.        </p>
         <p>I also believe that AI/ML models are powerful tools, and helping people from different domains use these technologies is fulfilling for me. So, I make conscious efforts to find opportunities where I get to push myself to learn, apply what I know, and contribute, with an attempt to always keep my learning curve in an increasing trend.</p>  
         <p>Some things I have worked/am working on are:</p>
-        <div class="projects-section">        
+        <div class="project-grid">
           <div class="project-card">
-            <div class="tag">GNN</div>
+            <div class="project-label blue">GNN</div>
             <h4>Graph Neural Networks for Hardware Security</h4>
-            <p>
-              I'm using GNNs to detect functional subcircuits (e.g., S-box, key expansion)
-              in digital circuit netlists — part of my master's thesis work.
-            </p>
+            <p>I'm using GNNs to detect functional subcircuits (e.g., S-box, key expansion) in digital circuit netlists — part of my master's thesis work.</p>
           </div>
         
           <div class="project-card">
-            <div class="tag">Low-Resource ML</div>
+            <div class="project-label pink">Low-Resource ML</div>
             <h4>Handwritten Text Recognition Model for Ancient Manuscripts</h4>
-            <p>
-              I collaborated with a historian to build a handwritten text model for 
-              18th–19th century manuscripts to enable automatic transcriptions.
-              (Repo coming soon! Can’t share details yet due to anonymous submission.)
-            </p>
+            <p>I collaborated with a historian to build a handwritten text model for 18th–19th century manuscripts to enable automatic transcriptions.</p>
           </div>
         
           <div class="project-card">
-            <div class="tag">Psychology</div>
+            <div class="project-label green">Psychology</div>
             <h4>Typing Behaviour & Mental Health</h4>
-            <p>
-              As part of the <a href="https://phonestudy.org/en/" target="_blank">Phone Study Project</a> at LMU Munich, 
-              I worked on mobile sensing data — especially keyboard data — 
-              to see if typing behaviour could indicate depression.
-            </p>
+            <p>As part of the <a href="https://phonestudy.org/en/" target="_blank">Phone Study Project</a> at LMU Munich, I worked on keyboard data to see if typing behaviour could indicate depression.</p>
           </div>
         
           <div class="project-card">
-            <div class="tag">Bias</div>
+            <div class="project-label purple">Bias</div>
             <h4>Cultural Stereotypes in Language Models</h4>
-            <p>
-              Recently, I've been exploring how LLMs reflect cultural stereotypes — 
-              especially for smaller or underrepresented regions — 
-              and thinking about potential research directions to address this.
-            </p>
+            <p>Exploring how LLMs reflect cultural stereotypes, especially for smaller or underrepresented regions — and thinking about potential research directions to address this.</p>
           </div>
         </div>
+        <!-- </div> -->
         
         <!-- <ul>
           <li><strong>Graph Neural Networks</strong> -> I am using GNNs to detect functional subcircuits (e.g., Sbox, key expansion) in digital circuit netlists. This is a part of my master's thesis.

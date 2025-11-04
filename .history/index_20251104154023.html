@@ -75,7 +75,7 @@
 
     .card {
       background: #fff;
-      border: 3px solid #222;
+      border: 2px solid #222;
       border-radius: 1rem;
       box-shadow: 6px 6px 0 #888;
       padding: 1.5rem;
@@ -298,7 +298,7 @@ ul li {
 }
 .project-card {
   background: #F5F9FF;
-  border: 1px dashed #000;
+  border: 2px dashed #000;
   border-radius: 1rem;
   /* box-shadow: 2px 2px 0 #000; */
   padding: 1rem 1.25rem;
@@ -490,7 +490,50 @@ nav a::after {
 nav a:hover::after {
   opacity: 1;
 }
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
 
+.project-card {
+  background: #fff;
+  border: 2px dashed #222;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 3px 3px 0 #000;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 0 #000;
+}
+
+.project-tag {
+  position: absolute;
+  top: -12px;
+  left: 16px;
+  background: #ffde59;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.75rem;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.project-card h3 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1rem;
+  margin-top: 0.8rem;
+}
+
+.project-card p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
 
   </style>
 </head>
@@ -602,7 +645,23 @@ nav a:hover::after {
         <p>I'm a Master's  of Statistics and Data Science student at LMU, Munich. I really enjoy working with domain experts to create machine learning based solutions to their problems. I like exploring different fields because I think each one comes with some challenges, and I learn the most when I am faced with these challenges.        </p>
         <p>I also believe that AI/ML models are powerful tools, and helping people from different domains use these technologies is fulfilling for me. So, I make conscious efforts to find opportunities where I get to push myself to learn, apply what I know, and contribute, with an attempt to always keep my learning curve in an increasing trend.</p>  
         <p>Some things I have worked/am working on are:</p>
-        <div class="projects-section">        
+        <div class="projects">
+          <div class="project-card">
+            <h3>Graph Neural Networks for Hardware Security</h3>
+            <p>Using GNNs to detect functional subcircuits (like S-box and key expansion) in digital circuit netlists — part of my master’s thesis work.</p>
+          </div>
+        
+          <div class="project-card">
+            <h3>Handwritten Text Recognition for Ancient Manuscripts</h3>
+            <p>Collaborated with a historian to build a model for 18th–19th century manuscripts enabling automatic transcriptions.</p>
+          </div>
+        
+          <div class="project-card">
+            <h3>Bayesian Methods for Data Quality</h3>
+            <p>Exploring probabilistic models for missing data detection and uncertainty quantification in tabular datasets.</p>
+          </div>
+        </div>
+        <!-- <div class="projects-section">        
           <div class="project-card">
             <div class="tag">GNN</div>
             <h4>Graph Neural Networks for Hardware Security</h4>
@@ -640,7 +699,7 @@ nav a:hover::after {
               especially for smaller or underrepresented regions — 
               and thinking about potential research directions to address this.
             </p>
-          </div>
+          </div> -->
         </div>
         
         <!-- <ul>

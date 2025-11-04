@@ -306,12 +306,12 @@ ul li {
   transition: all 0.25s ease;
 }
 
-
+/* 
 .project-card:hover {
   transform: translate(-2px, -2px);
   box-shadow: 4px 4px 0 #666;
   background: #eff5ff;
-}
+} */
 
 .project-card h4 {
   font-family: 'Space Mono', monospace;
@@ -491,7 +491,57 @@ nav a:hover::after {
   opacity: 1;
 }
 
+.project-card {
+  background: #fffdfb; /* soft warm cream base */
+  border: 2px dashed #d8d3ca;
+  border-radius: 1rem;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 2px 2px 0 #e7e3dc;
+}
 
+/* alternate background tones for visual rhythm */
+.project-card:nth-child(2n) {
+  background: #fdfcff; /* pale lavender */
+}
+.project-card:nth-child(3n) {
+  background: #fefbf5; /* warm butter */
+}
+
+/* heading + text */
+.project-card h4 {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #222;
+}
+
+.project-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* green tag style (same for all) */
+.project-label {
+  display: inline-block;
+  background-color: #e6f4ea;  /* soft green */
+  border: 1px solid #b5d9b8;
+  color: #2b422f;
+  border-radius: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+/* responsive layout — 3 per row on large screens */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+}
   </style>
 </head>
 <body>
@@ -602,7 +652,8 @@ nav a:hover::after {
         <p>I'm a Master's  of Statistics and Data Science student at LMU, Munich. I really enjoy working with domain experts to create machine learning based solutions to their problems. I like exploring different fields because I think each one comes with some challenges, and I learn the most when I am faced with these challenges.        </p>
         <p>I also believe that AI/ML models are powerful tools, and helping people from different domains use these technologies is fulfilling for me. So, I make conscious efforts to find opportunities where I get to push myself to learn, apply what I know, and contribute, with an attempt to always keep my learning curve in an increasing trend.</p>  
         <p>Some things I have worked/am working on are:</p>
-        <div class="projects-section">        
+        <!-- <div class="projects-section">     -->
+          <div class="project-grid">    
           <div class="project-card">
             <div class="tag">GNN</div>
             <h4>Graph Neural Networks for Hardware Security</h4>
@@ -642,6 +693,7 @@ nav a:hover::after {
             </p>
           </div>
         </div>
+        <!-- </div> -->
         
         <!-- <ul>
           <li><strong>Graph Neural Networks</strong> -> I am using GNNs to detect functional subcircuits (e.g., Sbox, key expansion) in digital circuit netlists. This is a part of my master's thesis.

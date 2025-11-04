@@ -75,7 +75,7 @@
 
     .card {
       background: #fff;
-      border: 3px solid #222;
+      border: 2px solid #222;
       border-radius: 1rem;
       box-shadow: 6px 6px 0 #888;
       padding: 1.5rem;
@@ -298,7 +298,7 @@ ul li {
 }
 .project-card {
   background: #F5F9FF;
-  border: 1px dashed #000;
+  border: 2px dashed #000;
   border-radius: 1rem;
   /* box-shadow: 2px 2px 0 #000; */
   padding: 1rem 1.25rem;
@@ -490,8 +490,94 @@ nav a::after {
 nav a:hover::after {
   opacity: 1;
 }
+/* ---------- Main Cards (About me, Mistake logs, etc.) ---------- */
+.card {
+  background: #FFFDFB; /* slightly warm white – matches sidebar tone */
+  border: 2px dashed #000; /* matches your pixel aesthetic */
+  border-radius: 1rem;
+  box-shadow: 4px 4px 0 #000; /* strong cartoon shadow for consistency */
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000;
+  background: #FFF7F3; /* subtle tint on hover */
+}
+
+.card small {
+  color: #444;
+}
+
+.card h2 {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.3rem;
+  margin-top: 0;
+  color: #000;
+}
 
 
+/* ---------- Project Cards ---------- */
+.project-card {
+  background: #F5F8FF; /* pastel blue-lavender tone */
+  border: 2px dashed #000;
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  transition: all 0.25s ease;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.project-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #000;
+  background: #EBF3FF; /* soft hover glow */
+}
+
+.project-card h4 {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+  margin: 0.4rem 0;
+  color: #111;
+}
+
+.project-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #222;
+}
+
+/* ---------- Project Tags ---------- */
+.project-card .tag {
+  display: inline-block;
+  background: #CBEAFF; /* softer than bright green, fits nav blue */
+  border: 1.5px solid #000;
+  border-radius: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.25rem 0.6rem;
+  margin-bottom: 0.4rem;
+  color: #000;
+  box-shadow: 2px 2px 0 #000;
+}
+
+.project-card .tag:nth-child(1) {
+  background: #BDE8B6; /* minty green */
+}
+.project-card .tag:nth-child(2) {
+  background: #FAD5E5; /* pink for contrast */
+}
+
+/* ---------- Projects Section Layout ---------- */
+.projects-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
   </style>
 </head>
 <body>
@@ -595,7 +681,7 @@ nav a:hover::after {
       </div>
 
       <div class="card" data-tab-content="about" style="display: block;">
-        <!-- <div class="tag">me</div> -->
+        <div class="tag">me</div>
         <!-- <h2>About me</h2> -->
         <small>🗓️ September, 2025</small>
         <!-- <h2>Hi, I'm Anjali ✨</h2> -->

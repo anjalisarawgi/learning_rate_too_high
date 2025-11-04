@@ -75,7 +75,7 @@
 
     .card {
       background: #fff;
-      border: 3px solid #222;
+      border: 2px solid #222;
       border-radius: 1rem;
       box-shadow: 6px 6px 0 #888;
       padding: 1.5rem;
@@ -298,7 +298,7 @@ ul li {
 }
 .project-card {
   background: #F5F9FF;
-  border: 1px dashed #000;
+  border: 2px dashed #000;
   border-radius: 1rem;
   /* box-shadow: 2px 2px 0 #000; */
   padding: 1rem 1.25rem;
@@ -490,7 +490,56 @@ nav a::after {
 nav a:hover::after {
   opacity: 1;
 }
+/* Main white content box */
+.content-box {
+  background: #fffefc; /* soft white tone matching your background */
+  border: 1.5px solid #bcbcbc; /* light gray border */
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 850px;
+  margin: 2rem auto;
+  font-family: "IBM Plex Mono", monospace;
+  color: #333;
+  box-shadow: 2px 2px 0 #888; /* small, gentle shadow for a paper lift feel */
+}
 
+/* Section date or header */
+.content-box .date {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Text inside content box */
+.content-box p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Project cards inside */
+.project-card {
+  background: #f9fafc; /* off-white */
+  border: 1.5px dashed #aaa; /* softer dashed border */
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  transition: all 0.15s ease;
+}
+
+/* Header for each project card */
+.project-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+/* On hover, gentle movement */
+.project-card:hover {
+  background: #fff;
+  border-color: #777;
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 0 #aaa;
+}
 
   </style>
 </head>
@@ -594,8 +643,8 @@ nav a:hover::after {
         <p>I shuffled my data and accidentally shuffled the labels *separately*.<br>The model got creative, but not in a good way.</p>
       </div>
 
-      <div class="card" data-tab-content="about" style="display: block;">
-        <!-- <div class="tag">me</div> -->
+      <div class="content-box" data-tab-content="about" style="display: block;">
+        <div class="tag">me</div>
         <!-- <h2>About me</h2> -->
         <small>🗓️ September, 2025</small>
         <!-- <h2>Hi, I'm Anjali ✨</h2> -->

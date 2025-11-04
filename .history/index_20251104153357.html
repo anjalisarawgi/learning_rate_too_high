@@ -75,7 +75,7 @@
 
     .card {
       background: #fff;
-      border: 3px solid #222;
+      border: 2px solid #222;
       border-radius: 1rem;
       box-shadow: 6px 6px 0 #888;
       padding: 1.5rem;
@@ -298,7 +298,7 @@ ul li {
 }
 .project-card {
   background: #F5F9FF;
-  border: 1px dashed #000;
+  border: 2px dashed #000;
   border-radius: 1rem;
   /* box-shadow: 2px 2px 0 #000; */
   padding: 1rem 1.25rem;
@@ -490,7 +490,70 @@ nav a::after {
 nav a:hover::after {
   opacity: 1;
 }
+/* White content box styling */
+.content-box {
+  background: #fffdf9;
+  border: 2px dashed #2a2a2a;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 6px 6px 0 #000;
+  font-family: "IBM Plex Mono", monospace;
+  color: #2a2a2a;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 850px;
+  line-height: 1.6;
+}
 
+/* Header + date style inside content box */
+.content-box .date {
+  font-size: 0.9rem;
+  color: #444;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.content-box .date::before {
+  content: "📅";
+  margin-right: 0.4rem;
+}
+
+/* Paragraph spacing and tone */
+.content-box p {
+  margin-bottom: 1rem;
+}
+
+/* Project cards inside box */
+.project-card {
+  border: 2px dotted #000;
+  border-radius: 12px;
+  background: #f0f4ff;
+  padding: 1.2rem;
+  margin: 1rem 0;
+  box-shadow: 4px 4px 0 #000;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.project-card h3 {
+  background: #cfe8ff;
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 8px;
+  border: 1.5px solid #000;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+}
+
+/* Hover detail */
+.project-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 #000;
+  transition: 0.15s ease;
+}
 
   </style>
 </head>
@@ -595,9 +658,10 @@ nav a:hover::after {
       </div>
 
       <div class="card" data-tab-content="about" style="display: block;">
-        <!-- <div class="tag">me</div> -->
+        <div class="tag">me</div>
         <!-- <h2>About me</h2> -->
-        <small>🗓️ September, 2025</small>
+        <!-- <small>🗓️ September, 2025</small> -->
+        <div class="date">September, 2025</div>
         <!-- <h2>Hi, I'm Anjali ✨</h2> -->
         <p>I'm a Master's  of Statistics and Data Science student at LMU, Munich. I really enjoy working with domain experts to create machine learning based solutions to their problems. I like exploring different fields because I think each one comes with some challenges, and I learn the most when I am faced with these challenges.        </p>
         <p>I also believe that AI/ML models are powerful tools, and helping people from different domains use these technologies is fulfilling for me. So, I make conscious efforts to find opportunities where I get to push myself to learn, apply what I know, and contribute, with an attempt to always keep my learning curve in an increasing trend.</p>  
