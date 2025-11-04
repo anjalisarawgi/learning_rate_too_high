@@ -55,13 +55,13 @@
       }
     }
 
-    nav {
+    /* nav {
       display: flex;
       justify-content: center;
       gap: 2rem;
       margin: 1.5rem 0;
       flex-wrap: wrap;
-    }
+    } */
 
     nav a {
   text-decoration: none;
@@ -72,22 +72,10 @@
   transition: all 0.2s ease;
 }
 
-nav a:hover {
-  background: #A9E6AE; /* slightly darker green */
-  border-radius: 0.5rem;
-  transform: scale(1.05);
-}
-
-nav a.active {
-  background: #C1F4C5; /* light green */
-  border-radius: 0.5rem;
-  font-weight: 700;
-  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.1);
-}
 
     .card {
       background: #fff;
-      border: 2px solid #222;
+      border: 3px solid #222;
       border-radius: 1rem;
       box-shadow: 6px 6px 0 #888;
       padding: 1.5rem;
@@ -310,7 +298,7 @@ ul li {
 }
 .project-card {
   background: #F5F9FF;
-  border: 2px dashed #000;
+  border: 1px dashed #000;
   border-radius: 1rem;
   /* box-shadow: 2px 2px 0 #000; */
   padding: 1rem 1.25rem;
@@ -461,8 +449,94 @@ footer .boom {
   width: 1.2rem;
   text-align: center;
 }
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin: 1.5rem 0 2.5rem 0;
+}
 
+nav a {
+  background: #F6F9FF;
+  border: 2px solid #000;
+  border-radius: 0.6rem;
+  padding: 0.5rem 1.2rem;
+  color: #000;
+  box-shadow: 3px 3px 0 #000;
+  transition: all 0.15s ease;
+}
 
+nav a:hover {
+  background: #BFD9FF; /* vintage blue hover */
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #000;
+}
+
+nav a.active {
+  background: #8FBFFF; /* denim blue active */
+  box-shadow: 2px 2px 0 #000 inset;
+  transform: translate(1px, 1px);
+}
+
+/* Optional tiny underscore animation */
+nav a::after {
+  content: "_";
+  opacity: 0;
+  margin-left: 0.25rem;
+  transition: opacity 0.2s ease;
+}
+
+nav a:hover::after {
+  opacity: 1;
+}
+
+/* --- Updated Project Cards Grid --- */
+.projects-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 1.8rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+/* Make cards square and colorful */
+.project-card {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* keeps them square */
+  border: 2px dashed #000;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  box-shadow: 4px 4px 0 #000;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Different pastel color themes */
+.project-card:nth-child(1) {
+  background: #FFF7C0; /* soft yellow */
+  box-shadow: 4px 4px 0 #E6B800;
+}
+.project-card:nth-child(2) {
+  background: #FFE5D9; /* pastel orange-pink */
+  box-shadow: 4px 4px 0 #FF9966;
+}
+.project-card:nth-child(3) {
+  background: #E5E1FF; /* soft purple */
+  box-shadow: 4px 4px 0 #BCA2FF;
+}
+.project-card:nth-child(4) {
+  background: #D6EEFF; /* soft blue */
+  box-shadow: 4px 4px 0 #6FB1FF;
+}
+
+/* Hover interaction */
+.project-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 6px 6px 0 #000;
+}
   </style>
 </head>
 <body>
@@ -566,7 +640,7 @@ footer .boom {
       </div>
 
       <div class="card" data-tab-content="about" style="display: block;">
-        <div class="tag">me</div>
+        <!-- <div class="tag">me</div> -->
         <!-- <h2>About me</h2> -->
         <small>🗓️ September, 2025</small>
         <!-- <h2>Hi, I'm Anjali ✨</h2> -->
