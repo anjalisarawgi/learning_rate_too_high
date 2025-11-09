@@ -427,9 +427,13 @@ footer .boom {
 .project-card {
   position: relative;
   padding-bottom: 2rem;
-  border-bottom: 3px dashed #f4b5d3  ; /* horizontal separator */
+  border-bottom: 4px dotted #d9d1e0
+  ; /* horizontal separator */
 }
-
+.project-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
 /* dot aligned to the title */
 .project-card h4 {
   position: relative;
@@ -443,6 +447,7 @@ footer .boom {
   margin-bottom: 0.4rem;
   padding-left: 1.6rem; /* space for dot */
 }
+
 
 /* the cute dot next to the title */
 .project-card h4::before {
@@ -458,7 +463,15 @@ footer .boom {
   transform: translateY(-50%);
   box-shadow: 1px 1px 0 #000;
 }
+.projects-section .project-card h4 {
+  display: inline;
+  background-color: #ffe4f2;
 
+  padding-left: 1.6rem;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  color: #111;
+}
 /* Right-side tag */
 .project-card::after {
   position: absolute;
@@ -476,7 +489,7 @@ footer .boom {
 
 /* category colors */
 .project-card[data-type="ml"]::after {
-  content: "GNN";
+  content: "Hardware Security";
   background: #c5f8cc;
 }
 .project-card[data-type="history"]::after {
@@ -488,24 +501,79 @@ footer .boom {
   background: #fff6b7;
 }
 .project-card[data-type="bias"]::after {
-  content: "Bias";
+  content: "Cultural Bias";
   background: #e8d4ff;
 }
 
 
 /* mobile adjustment */
 @media (max-width: 600px) {
-  .project-card h4 {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.3rem;
-  }
 }
 
 
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.pub-item {
+  padding-left: 0.8rem;
+  border-left: 2.5px solid #d9d1e0
+  ;
+  line-height: 1.6;
+}
+
+.pub-item h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #111;
+  margin: 0 0 0.35rem;
+}
+
+.pub-item h4 em {
+  font-style: italic;
+  font-weight: 500;
+}
+.card h2 {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #c8b5ff;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 6px;
+}
+.pub-item p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.93rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.pub-item strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.pub-item a {
+  color: #6040b0;
+  text-decoration: none;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  border-bottom: 1px dotted #bca2ff;
+}
+
+.pub-item a:hover {
+  color: #3a0098;
+  border-bottom-style: solid;
+}
 
 
-
+/* add subtle spacing rhythm between text blocks */
+.pub-item p + p {
+  margin-top: 0.25rem;
+}
 
 aside {
   width: 260px;
@@ -626,7 +694,7 @@ main {
       </div>
 
       <div class="card" data-tab-content="about" style="display: block;">
-        <div class="tag">me</div>
+        <!-- <div class="tag">me</div> -->
         <!-- <h2>About me</h2> -->
         <small>🗓️ September, 2025</small>
         <!-- <h2>Hi, I'm Anjali ✨</h2> -->
@@ -684,12 +752,40 @@ main {
              <!-- Particularly, I am curious to evaluate how these models handle smaller or less represented regions, for example Nepal. I think it would be very interesting to see if we can identify and solve for the biases in the dataset it was trained on itself. -->
         <!-- </ul> -->
       </div>
+      <div class="card" data-tab-content="publications" style="display: none;">
+        <!-- <div class="tag">papers</div> -->
+        <h2>Publications</h2>
+        <!-- <small>📚 Updated 2025</small> -->
+      
+        <div class="pub-list">
+          <div class="pub-item">
+            <h4>Digitizing Nepal’s Written Heritage: A Comprehensive HTR Pipeline for Old Nepali Manuscripts</h4>
+            <p><strong>Authors:</strong> <u>Anjali Sarawgi</u>, Esteban Garces Arias, Christof Zotter</p>
+            <p><strong>Status:</strong>[In Submission]</p>
+          </div>
+      
+          <div class="pub-item">
+            <h4>The relation between passively collected data and PTSD: a systematic review and meta-analysis</h4>
+            <p><strong>Authors:</strong> Ningzhe Zhu, <u>Anjali Sarawgi</u>, Markus Bühner, Harald Baumeister, Patricia Garatva, Thomas Ehring, Yannik Terhorst</p>
+            <p><strong>Published in:</strong> npj Digital Medicine, Nature Portfolio (2025)</p>
+            <a href="https://doi.org/10.1038/s41746-025-01825-6" target="_blank">DOI: 10.1038/s41746-025-01825-6 →</a>
+          </div>
+      
+          <div class="pub-item">
+            <h4>Environmental cost of food wastage: Integrated response through a mix of environmental policy instruments</h4>
+            <p><strong>Authors:</strong> Pratyush Jain, <u>Anjali Sarawgi</u>, Pragati Jain</p>
+            <p><strong>Published in:</strong> Sustainable Development, Wiley (2023)</p>
+            <a href="https://doi.org/10.1002/sd.2522" target="_blank">DOI: 10.1002/sd.2522 →</a>
+          </div>
+        </div>
+      </div>
       <footer>
         <span class="boom">💥</span> more updates coming soon
       </footer>
       <!-- <img src="Cloud.png" alt="Cloud mascot" class="cloud-mascot"> -->
     </main>
   </div>
+
 
   <!-- JS for tab switching -->
   <script>
