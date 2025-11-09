@@ -419,7 +419,7 @@ footer .boom {
   flex-direction: column;
   gap: 2rem;
   margin-top: 2rem;
-  max-width: 850px;
+  max-width: 900px;
   margin-inline: auto;
   position: relative;
 }
@@ -427,7 +427,7 @@ footer .boom {
 .project-card {
   position: relative;
   padding-bottom: 2rem;
-  border-bottom: 3px dashed #f4b5d3  ; /* horizontal separator */
+  border-bottom: 2px dotted #f4b5d3  ; /* horizontal separator */
 }
 
 /* dot aligned to the title */
@@ -443,21 +443,59 @@ footer .boom {
   margin-bottom: 0.4rem;
   padding-left: 1.6rem; /* space for dot */
 }
+.project-card h4 {
+  position: relative;
+  display: inline-block;
+  padding-left: 1.4rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111;
+  background: linear-gradient(120deg, #f3ebff 0%, #e4d6ff 100%); /* soft purple highlight */
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
 
-/* the cute dot next to the title */
+/* --- Highlighter effect for headings --- */
+.card h2 {
+  position: relative;
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  background: linear-gradient(120deg, #fff6b7 0%, #ffedb7 100%);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 2px 6px 2px;
+  border-radius: 4px;
+  z-index: 2;
+  margin-bottom: 1rem;   
+}
+
+/* remove yellow highlight from project titles */
+.project-card h4 {
+  position: relative;
+  display: inline-block;
+  padding-left: 1.4rem;
+  font-family: 'Space Mono', monospace;
+  background: none;     /* removes highlight */
+  box-decoration-break: unset;
+  -webkit-box-decoration-break: unset;
+}
+
+/* keep the purple dot outside */
 .project-card h4::before {
   content: "";
   position: absolute;
   left: 0;
   top: 50%;
+  transform: translateY(-50%);
   width: 8px;
   height: 8px;
-  background: #c7afff;
-  border: 2px solid #000;
+  background-color: #bca2ff;
   border-radius: 50%;
-  transform: translateY(-50%);
-  box-shadow: 1px 1px 0 #000;
 }
+
 
 /* Right-side tag */
 .project-card::after {
@@ -472,11 +510,17 @@ footer .boom {
   padding: 0.2rem 0.6rem;
   color: #000;
   white-space: nowrap;
+  border: 2px dashed #000;
+  border-radius: 1rem;
+  background: #fffef7;
+  box-shadow: 3px 3px 0 #bca2ff;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.75rem;
 }
 
 /* category colors */
 .project-card[data-type="ml"]::after {
-  content: "GNN";
+  content: "Hardware Security";
   background: #c5f8cc;
 }
 .project-card[data-type="history"]::after {
@@ -488,10 +532,21 @@ footer .boom {
   background: #fff6b7;
 }
 .project-card[data-type="bias"]::after {
-  content: "Bias";
+  content: "Cultural Bias";
   background: #e8d4ff;
 }
 
+
+.project-card h4::before {
+  animation: bounceDot 3s ease-in-out infinite;
+}
+
+
+
+@keyframes bounceDot {
+  0%, 100% { transform: translateY(-50%) scale(1); }
+  50% { transform: translateY(-70%) scale(1.2); }
+}
 
 /* mobile adjustment */
 @media (max-width: 600px) {
